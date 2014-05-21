@@ -1,0 +1,87 @@
+﻿@model IEnumerable<HRM.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressStreet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressStreet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.empId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.empId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.empId })
+        </td>
+    </tr>
+}
+
+</table>

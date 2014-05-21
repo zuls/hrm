@@ -7,6 +7,16 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <style type="text/css">
+    a.logo {
+        background: url(~/Content/Images/zlogo.png) no-repeat top left;
+        display = black;
+        width: 150px;
+        height: 150px;
+        text-indent: -9999px; /* hides the link text */
+    }
+</style>
+
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -17,7 +27,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Office Manager", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink(" ", "Index", "Home", new { @class = "logo" })
+                <img src="~/Content/Images/zlogo.png" height="50%" width="50%"/>
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
