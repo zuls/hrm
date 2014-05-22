@@ -46,7 +46,7 @@ namespace HRM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="empId,fname,lname,addressStreet,addressCity,addressZip,emailOne,emailTwo,photo,dob,phone")] Employee employee)
+        public ActionResult Create([Bind(Include="empId,fname,lname,addressStreet,addressCity,addressZip,emailOne,emailTwo,photo,dob,phone,deptId,desigId,joiningDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace HRM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="empId,fname,lname,addressStreet,addressCity,addressZip,emailOne,emailTwo,photo,dob,phone")] Employee employee)
+        public ActionResult Edit([Bind(Include="empId,fname,lname,addressStreet,addressCity,addressZip,emailOne,emailTwo,photo,dob,phone,deptId,desigId,joiningDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {

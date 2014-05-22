@@ -10,7 +10,8 @@
 namespace HRM.Models
 {
     using System;
-
+    using System.Collections.Generic;
+    
     public partial class Employee
     {
         public int empId { get; set; }
@@ -24,5 +25,8 @@ namespace HRM.Models
         public byte[] photo { get; set; }
         public Nullable<System.DateTime> dob { get; set; }
         public string phone { get; set; }
+        public Nullable<int> deptId { get; set; }
+        public Nullable<int> desigId { get; set; }
+        public Nullable<System.DateTime> joiningDate { get; set; }
     }
 }

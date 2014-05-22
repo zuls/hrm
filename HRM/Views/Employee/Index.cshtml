@@ -41,6 +41,15 @@
         <th>
             @Html.DisplayNameFor(model => model.phone)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deptId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.desigId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.joiningDate)
+        </th>
         <th></th>
     </tr>
 
@@ -75,6 +84,15 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deptId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desigId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.joiningDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.empId }) |
