@@ -21,6 +21,21 @@ namespace HRM.Controllers
         }
 
         // GET: /Employee/Details/5
+        
+        [HttpPost]
+        public JsonResult EmployeeList()
+        {
+            try
+            {
+                List<Employee> Employees = db.Employees.ToList();
+                return Json(new { Result ="OK", Records = Employees});
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Result = "ERROR", Message = ex.Message });
+            }
+        }
         public ActionResult Details(int? id)
         {
             if (id == null)

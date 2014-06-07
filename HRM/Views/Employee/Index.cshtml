@@ -9,97 +9,68 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.fname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.lname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.addressStreet)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.addressCity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.addressZip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.emailOne)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.emailTwo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.photo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dob)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.deptId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.desigId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.joiningDate)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.fname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.addressStreet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.addressCity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.addressZip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.emailOne)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.emailTwo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.photo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dob)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.deptId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.desigId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.joiningDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.empId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.empId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.empId })
-        </td>
-    </tr>
-}
 
-</table>
+<div id="EmployeeTableContainer"></div>
+
+<script type="text/javascript">
+    $n = jQuery.noConflict();
+    $n(document).ready(function () {
+        $n('#EmployeeTableContainer').jtable({
+            title: 'Table of Employee',
+            actions: {
+                listAction: 'EmployeeList',
+                createAction: '@Html.ActionLink("Create New", "Create")',
+                updateAction: '/GettingStarted/UpdatePerson',
+                deleteAction: '/GettingStarted/DeletePerson'
+            },
+            fields: {
+                empId: {
+                    key: true,
+                    list: false
+                },
+                fname: {
+                    title: 'First Name',
+                    width: '20%'
+                },
+                lname: {
+                    title: 'Last Name',
+                    width: '20%'
+                },
+                addressStreet: {
+                    title: 'Address - Street',
+                    list: false
+                },
+                addressCity: {
+                    title: 'Address - City',
+                    width: '20%'
+                },
+                addressZip: {
+                    title: 'Address - Zip',
+                    list: false
+                },
+                emailOne: {
+                    title: 'Primary email',
+                    width: '20%'
+                },
+                photo: {
+                    title: 'Photo',
+                    list: false
+                },
+                dob: {
+                    title: 'Date of birth',
+                    width: '20%',
+                    type: 'date'
+                },
+                
+                phone: {
+                    title: 'Phone',
+                    width: '20%',
+                    list: true
+                }
+            }
+        });
+        $n('#EmployeeTableContainer').jtable('load');
+
+    });
+</script>
